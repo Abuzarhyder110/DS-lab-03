@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int depth = 2, rows = 2, cols = 2; // Define dimensions
+    int array1[depth][rows][cols], array2[depth][rows][cols], result[depth][rows][cols];
+
+    cout << "Enter elements of the first 3D array (" << depth << "x" << rows << "x" << cols << "):\n";
+    for (int d = 0; d < depth; d++) {
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                cout << "Element [" << d << "][" << r << "][" << c << "]: ";
+                cin >> array1[d][r][c];
+            }
+        }
+    }
+
+    cout << "Enter elements of the second 3D array (" << depth << "x" << rows << "x" << cols << "):\n";
+    for (int d = 0; d < depth; d++) {
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                cout << "Element [" << d << "][" << r << "][" << c << "]: ";
+                cin >> array2[d][r][c];
+            }
+        }
+    }
+
+    for (int d = 0; d < depth; d++) {
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                result[d][r][c] = array1[d][r][c] * array2[d][r][c];
+            }
+        }
+    }
+
+    cout << "Resulting 3D array after multiplication:\n";
+    for (int d = 0; d < depth; d++) {
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                cout << "Element [" << d << "][" << r << "][" << c << "] = " << result[d][r][c] << endl;
+            }
+        }
+    }
+
+    return 0;
+}
